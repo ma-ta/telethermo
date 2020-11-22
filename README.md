@@ -1,2 +1,3 @@
-# telethermo
-Wi-Fi teploměr se dvěma čidly (vnitřní/vnější), web-serverem a OLED
+# TeleThermo
+
+> Wi-Fi teploměr se dvěma čidly (vnitřní/vnější), web-serverem a OLED
