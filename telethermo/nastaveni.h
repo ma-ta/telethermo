@@ -9,6 +9,6 @@ const String THINGSPEAK_KEY = "";  // API key pro ThingSpeak
 const String THERMO_0 = "Cidlo 1";  // čidlo 1
 const String  THERMO_1 = "Cidlo 2";  // čidlo 2
 
-const String JEDNOTKY = "°C";  // pouze znak k zobrazení
+const String JEDNOTKY = "°C";  // pouze popis pro uživatele (nezmění použité jednotky ve výpočtu)
 const int CETNOST_MERENI = 9000; // [ms] jak často měřit teplotu
 const int CETNOST_UPLOAD = 60000; // [ms] jak často nahrávat na ThingSpeak

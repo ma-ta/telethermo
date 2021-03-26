@@ -49,6 +49,12 @@ void handleRoot()
   int restIN = t1.substring(index + 1).toInt();
   int temperatureIN = t1.toInt();
 
+  // konverze typu String do char[] kvůli použití ve funkci snprintf() níže
+  char thermo_0[THERMO_0.length()];
+  char thermo_1[THERMO_1.length()];
+  strcpy(thermo_0, THERMO_0.c_str());
+  strcpy(thermo_1, THERMO_1.c_str());
+
 
   snprintf(temp, 1000,
 
@@ -73,16 +79,16 @@ void handleRoot()
           <td>Čidlo</td><td>Teplota</td>\
         </tr>\
         <tr>\
-          <td>1</td><td>%02d.%01d &deg;C</td>\
+          <td>%s</td><td>%02d.%01d &deg;C</td>\
         </tr>\
         <tr>\
-          <td>2</td><td>%02d.%01d &deg;C</td>\
+          <td>%s</td><td>%02d.%01d &deg;C</td>\
         </tr>\
       </table>\
     </body>\
     </html>",
 
-hr, min % 60, sec % 60, temperatureOUT,restOUT,temperatureIN,restIN);
+hr, min % 60, sec % 60, thermo_0, temperatureOUT,restOUT, thermo_1, temperatureIN,restIN);
   server.send(200, "text/html", temp);
 }
 
@@ -103,6 +109,32 @@ void handleNotFound() {
   server.send(404, "text/plain", message);
 }
 
+void handleJson()
+{
+  String t0 = String(teplota_0, 1);
+  String t1 = String(teplota_1, 1);
+  // konverze typu String do char[] kvůli použití ve funkci snprintf() níže
+  char jednotky[JEDNOTKY.length()];
+  strcpy(jednotky, JEDNOTKY.c_str());
+  
+  char temp[1000];
+  uint8 index = t0.indexOf('.');
+  int restOUT = t0.substring(index+1).toInt();
+  int temperatureOUT = t0.toInt();
+  index = t1.indexOf('.');
+  int restIN = t1.substring(index + 1).toInt();
+  int temperatureIN = t1.toInt();
+
+
+  snprintf(temp, 1000,
+
+    "{ \"velicina\": \"teplota\", \"jednotky\": \"%s\", \"cidla\": { \"t0\": %02d.%01d, \"t1\": %02d.%01d } }",
+    jednotky, temperatureOUT, restOUT, temperatureIN, restIN
+  );
+  
+  server.send(200, "application/json", temp);
+}
+
 
 void inicializaceServeru() {
   if (mdns.begin(NAZEV_PRODUKTU, WiFi.localIP())) {
@@ -113,6 +145,7 @@ void inicializaceServeru() {
   server.on("/inline", []() {
     server.send(200, "text/plain", "OK");
   });
+  server.on("/json", handleJson);
   server.onNotFound(handleNotFound);
   server.begin();
   Serial.println("HTTP server spusten");
