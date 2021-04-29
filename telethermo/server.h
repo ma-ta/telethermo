@@ -50,8 +50,8 @@ void handleRoot()
   int temperatureIN = t1.toInt();
 
   // konverze typu String do char[] kvůli použití ve funkci snprintf() níže
-  char thermo_0[THERMO_0.length()];
-  char thermo_1[THERMO_1.length()];
+  char thermo_0[THERMO_0.length() + 1];
+  char thermo_1[THERMO_1.length() + 1];
   strcpy(thermo_0, THERMO_0.c_str());
   strcpy(thermo_1, THERMO_1.c_str());
 
@@ -114,7 +114,7 @@ void handleJson()
   String t0 = String(teplota_0, 1);
   String t1 = String(teplota_1, 1);
   // konverze typu String do char[] kvůli použití ve funkci snprintf() níže
-  char jednotky[JEDNOTKY.length()];
+  char jednotky[JEDNOTKY.length() + 1];
   strcpy(jednotky, JEDNOTKY.c_str());
   
   char temp[1000];
