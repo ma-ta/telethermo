@@ -1,12 +1,12 @@
 # TeleThermo
 
-> Wi-Fi teploměr se dvěma čidly (vnitřní/vnější) a OLED displejem
+> Wi-Fi teploměr se dvěma čidly (interiér/exteriér) a OLED displejem
 
 ## Funkce
 - dvě teplotní čidla s přesnostní 0,5 °C
 - OLED displej s aktuální teplotou a IP adresou zařízení
 - vestavěný web-server pro zobrazení aktuálních hodnot
-- upload do cloudu na ThingSpeak
+- ukládání hodnot do cloudu na ThingSpeak
 
 ## Potřebné součátky
 Množství | Název
