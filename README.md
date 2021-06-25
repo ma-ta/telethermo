@@ -8,7 +8,7 @@
 - vestavěný web-server pro zobrazení aktuálních hodnot
 - ukládání hodnot do cloudu na ThingSpeak
 
-## Potřebné součátky
+## Potřebné součástky
 Množství | Název
 -------- | -----
 1 | NodeMCU s ESP8266
