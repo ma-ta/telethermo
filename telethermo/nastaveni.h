@@ -45,6 +45,7 @@ const String JEDNOTKY = "°C";  // pouze popis pro uživatele (nezmění použit
 // časový odstup mezi úkony
 const int CETNOST_MERENI = (1000) *  9; // [ms] jak často měřit teplotu
 const int CETNOST_UPLOAD = (1000) * 60; // [ms] jak často nahrávat na ThingSpeak
+#define WIFI_VYCKEJ 20000  // [ms] doba čekání na Wi-Fi připojení po spuštění
 // výchozí teplota (není-li k dispozici aktuální hodnota)
 const float TEPLOTA_NULL = -999.0;
 // baud rate sériové linky
