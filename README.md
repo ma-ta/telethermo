@@ -27,7 +27,7 @@ Množství | Název
 ### Potřebný software a knihovny
 Název | Původ | Kategorie | Ověřená verze
 ----- | ----- | --------- | -------------
-[CH340 driver](http://www.wch-ic.com/products/CH340.html) (na Windows Update) | wch.cn | ovladač | 3.5.2019.1
+[CH340 driver](http://www.wch-ic.com/products/CH340.html) (na Windows Update) | wch.cn | [ovladač](http://www.wch-ic.com/downloads/CH341SER_ZIP.html) | 3.5.2019.1
 [Arduino IDE](//www.arduino.cc/en/software) | Arduino | IDE | 1.8.15
 [ESP8266 for Arduino](//github.com/esp8266/Arduino) | esp8266 project | SDK | 3.0.1
 [ESP8266-OLED-SSD1306](//github.com/ThingPulse/esp8266-oled-ssd1306) | ThingPulse | knihovna | 4.2.0
