@@ -2,6 +2,9 @@
 
 > Wi-Fi teploměr se dvěma čidly (interiér/exteriér), OLED displejem a záznamem na ThingSpeak
 
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/ma-ta/telethermo?include_prereleases)
+![GitHub](https://img.shields.io/github/license/ma-ta/telethermo)
+
 ## Funkce
 - dvě teplotní čidla s přesnostní 0,5 °C
 - OLED displej s aktuální teplotou a IP adresou zařízení
